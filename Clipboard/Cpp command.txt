@@ -1,0 +1,1 @@
+﻿cl.exe /Zi /EHsc /nologo /FeC:\Users\aaron.montgomery\source\repos\Clipboard\Clipboard\copy.dll C:\Users\aaron.montgomery\source\repos\Clipboard\copy.cpp
