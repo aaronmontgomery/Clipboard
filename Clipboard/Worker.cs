@@ -4,11 +4,11 @@ namespace Clipboard
 {
     public class Worker : BackgroundService
     {
-        [DllImport("copy.dll")]
-        private static extern int main();
-
+        [DllImport("copy.dll", CallingConvention =CallingConvention.Cdecl, CharSet =CharSet.Auto)]
+        private static extern IntPtr test();
+        
         private readonly ILogger<Worker> _logger;
-
+        
         public Worker(ILogger<Worker> logger)
         {
             _logger = logger;
@@ -19,7 +19,7 @@ namespace Clipboard
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                var a = main();
+                string? s = Marshal.PtrToStringAnsi(test());
                 await Task.Delay(1000, stoppingToken);
             }
         }

@@ -1,23 +1,13 @@
 #include <iostream>
+#include "copy.h"
 
 using namespace std;
 
-/*
-class TestClass {
-    public:
-        __declspec(dllexport) static int test() {
-            //cout << "CLIPBOARD TEST" << endl;
-            //TestClass testClass;
-            //testClass.test();
-            return 0;
-        }
-};
-*/
-
-//__declspec(dllexport) string test() {
-//    return "test";
-//}
-
-__declspec(dllexport) int main() {
+int main() {
     return 0;
+}
+
+const char* test() {
+    const char* test = "test";
+    return test;
 }
